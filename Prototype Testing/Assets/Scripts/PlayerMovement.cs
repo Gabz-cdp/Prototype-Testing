@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 6; //tracks the speed of the character
+    public float speed = 200; //tracks the speed of the character
     public int facingDirection = 1;  //Tracks the direction the character is facing (the set value is 1 to face RIGHT)
     public Rigidbody2D rb; //Handles all the physics
     public Animator anim; //Reference to the animator
