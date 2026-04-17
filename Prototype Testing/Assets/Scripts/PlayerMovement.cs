@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 200; //tracks the speed of the character
+    public float speed = 250; //tracks the speed of the character
     public int facingDirection = 1;  //Tracks the direction the character is facing (the set value is 1 to face RIGHT)
     public Rigidbody2D rb; //Handles all the physics
     public Animator anim; //Reference to the animator
 
+    public Vector2 lastPos; //picking up maggot apple/breaking maggot apple trees
 
     // FixedUpdate is called 50 times per frame and more reliable for physics calculations
     void FixedUpdate()
@@ -26,6 +27,11 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = new Vector2(horizontal, vertical) * speed; //Ridgidbody's velocity is equal to the horizonal and vertical inputs
                                                                        //Multiply by speed so that the character isn't moving at 1 but at the speed set
+    
+        if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            lastPos = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        }
     }
 
 
