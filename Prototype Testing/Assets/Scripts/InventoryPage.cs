@@ -12,6 +12,10 @@ public class InventoryPage : MonoBehaviour
 
     List<InventoryItem> listOfUIItems = new List<InventoryItem>(); //Stores the indices of each item of the inventory
 
+    //filler assets
+    public Sprite image; //item
+    public int quantity; //item quantity
+    
     public void InitializeInventoryUI(int inventorysize)
     {
         for (int i = 0; i < inventorysize; i++)
@@ -19,12 +23,46 @@ public class InventoryPage : MonoBehaviour
             InventoryItem uiItem = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
             uiItem.transform.SetParent(contentPanel);
             listOfUIItems.Add(uiItem); //Tracks the number of items in the inventory 
+
+            //Assigning methods to the events
+            uiItem.OnItemClicked += HandleItemSelection;
+            uiItem.OnItemBeginDrag += HandleBeginDrag;
+            uiItem.OnItemDroppedOn += HandleSwap;
+            uiItem.OnItemEndDrag += HandleEndDrag;
+            uiItem.OnRightMouseBtnClick += HandleShowItemActions;
         }
+    }
+
+    private void HandleItemSelection(InventoryItem obj)
+    {
+        Debug.Log(obj.name);
+    }
+
+    private void HandleBeginDrag(InventoryItem obj)
+    {
+        
+    }
+
+    private void HandleSwap(InventoryItem obj)
+    {
+
+    }
+
+    private void HandleEndDrag(InventoryItem obj)
+    {
+
+    }
+
+    private void HandleShowItemActions(InventoryItem obj)
+    {
+
     }
 
     public void Show()
     {
         gameObject.SetActive(true);
+
+        listOfUIItems[0].SetData(image, quantity);
     }
 
     public void Hide()

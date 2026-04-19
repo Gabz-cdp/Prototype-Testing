@@ -214,3 +214,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryPage
   itemPrefab: {fileID: 7690243872703855762, guid: f101b865591602b4bb9d03b2bf67ffab, type: 3}
   contentPanel: {fileID: 4691329598266372108}
+  image: {fileID: -8398230283193139311, guid: 074f4583776872e4baa14a6eda3cb73a, type: 3}
+  quantity: 1
