@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 96cb50c60e3f037468a40d950325a526
+guid: 0e8eb8122adb33a4e84ed2f8cfc107a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6049605792901559095
-    second: Water_0
-  - first:
-      213: -5882170695943828418
-    second: Water_1
+      213: -8517437225112286964
+    second: Health_Bar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -77,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Water_0
+      name: Health_Bar_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 4
-        width: 28
-        height: 57
+        x: 382
+        y: 1106
+        width: 1061
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 733fa0d9a6484f350800000000000000
-      internalID: 6049605792901559095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 15
-        width: 26
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3c4e08cae45e5ea0800000000000000
-      internalID: -5882170695943828418
+      spriteID: c094e7898fbfbc980800000000000000
+      internalID: -8517437225112286964
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Water_0: 6049605792901559095
-      Water_1: -5882170695943828418
+      Health_Bar_0: -8517437225112286964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

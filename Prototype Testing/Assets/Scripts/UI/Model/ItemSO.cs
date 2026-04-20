@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Inventory.Model
+{
+    //[CreateAssetMenu]
+    public abstract class ItemSO : ScriptableObject
+    {
+        //list of assets
+        [field: SerializeField]
+        public bool IsStackable { get; set; }
+
+        public int ID => GetInstanceID();
+
+        [field: SerializeField]
+        public int MaxStackSize { get; set; } = 1;
+
+        [field: SerializeField]
+        public Sprite ItemImage { get; set; }
+    }
+}
