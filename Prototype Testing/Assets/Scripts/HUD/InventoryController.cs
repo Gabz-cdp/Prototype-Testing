@@ -6,7 +6,7 @@ public class InventoryController : MonoBehaviour
 {
     [SerializeField]
     private InventoryPage inventoryUI;
-    public int inventorySize = 10; //Temp value
+    public int inventorySize = 5; //Temp value
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class InventoryController : MonoBehaviour
     
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I)) //Open inventory with the keyboard key "I" (can change)
+        if (Input.GetKeyDown(KeyCode.I)) //Open inventory with the keyboard key "I" (can change) //Alteranative method (Input.GetMouseKeyDown(0))
         {
             if (inventoryUI.isActiveAndEnabled == false) //Changed opening of inventory to a mouse click rather
             {

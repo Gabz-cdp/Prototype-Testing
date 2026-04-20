@@ -10,11 +10,16 @@ public class InventoryPage : MonoBehaviour
     [SerializeField]
     private RectTransform contentPanel;//Content of the inventory screen
 
-    List<InventoryItem> listOfUIItems = new List<InventoryItem>(); //Stores the indices of each item of the inventory
+    List<InventoryItem> listOfUIItems = new List<InventoryItem>(); //Stores the indices of each item of the inventory //index of the inventory slots to manage movement of items
 
-    //filler assets
+    //temp values
     public Sprite image; //item
     public int quantity; //item quantity
+
+    private void Awake()
+    {
+        Hide(); //hide the menu
+    }
     
     public void InitializeInventoryUI(int inventorysize)
     {
@@ -35,7 +40,8 @@ public class InventoryPage : MonoBehaviour
 
     private void HandleItemSelection(InventoryItem obj)
     {
-        Debug.Log(obj.name);
+        //Debug.Log(obj.name); //see if items are clickable
+        listOfUIItems[0].Select();
     }
 
     private void HandleBeginDrag(InventoryItem obj)
@@ -62,7 +68,7 @@ public class InventoryPage : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        listOfUIItems[0].SetData(image, quantity);
+        listOfUIItems[0].SetData(image, quantity); //the index of the inventory
     }
 
     public void Hide()

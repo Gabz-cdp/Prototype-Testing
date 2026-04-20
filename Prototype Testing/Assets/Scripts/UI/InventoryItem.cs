@@ -9,12 +9,12 @@ using UnityEngine.EventSystems;
 public class InventoryItem : MonoBehaviour
 {
     [SerializeField]
-    private Image StoredItem; //image used to display item //if disabled, hides quantity as well
+    private Image itemImage; //image used to display item //if disabled, hides quantity as well
     [SerializeField]
-    private TMP_Text ItemText;
+    private TMP_Text quantityTxt;
 
     [SerializeField]
-    private Image border; //indicates what object is selected
+    private Image borderImage; //indicates what object is selected
 
     public event Action<InventoryItem> OnItemClicked, OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag, OnRightMouseBtnClick; //drag items around and swap them through clicks
 
@@ -28,38 +28,38 @@ public class InventoryItem : MonoBehaviour
 
     public void ResetData()
     {
-        this.StoredItem.gameObject.SetActive(false);
+        this.itemImage.gameObject.SetActive(false); //Disable image and quantity //Make the slot look empty
         empty = true;
     }
 
     public void Deselect()
     {
-        border.enabled = false;
+        borderImage.enabled = false; //indicates when a slot is selected
     }
 
-    public void SetData(Sprite sprite, int quantity)
+    public void SetData(Sprite sprite, int quantity) //the input data
     {
-        this.StoredItem.gameObject.SetActive(true);
-        this.StoredItem.sprite = sprite;
-        this.ItemText.text = quantity + "";
-        this.empty = false;
+        this.itemImage.gameObject.SetActive(true);
+        this.itemImage.sprite = sprite;
+        this.quantityTxt.text = quantity + "";
+        this.empty = false; //populated slot
     }
 
     public void Select()
     {
-        border.enabled = true; //indicates the highlighted slot
+        borderImage.enabled = true; //indicates the highlighted slot
     }
 
     public void OnBeginDrag()
     {
         if (empty)
-            return;
+            return; //if the item is empty then you can not drag it
         OnItemBeginDrag?.Invoke(this); //checking to see that there is an item in the slot to be dragged
     }
 
     public void OnDrop()
     {
-        OnItemDroppedOn?.Invoke(this);
+        OnItemDroppedOn?.Invoke(this); //when you drop and item on an item it swaps it and rehighlights the slot //will never be empty
     }
 
     public void OnEndDrag()
@@ -69,14 +69,16 @@ public class InventoryItem : MonoBehaviour
 
     public void OnPointerClick(BaseEventData data) //left and right click of mouse
     {
+        if (empty)
+            return;
         PointerEventData pointerData = (PointerEventData)data;
         if (pointerData.button == PointerEventData.InputButton.Right) //checking which click was used on the mouse
         {
-            OnRightMouseBtnClick?.Invoke(this); //right click - other options
+            OnRightMouseBtnClick?.Invoke(this); //right click - other options like feed creature or drop item
         }
         else
         {
-            OnItemClicked?.Invoke(this); //left click
+            OnItemClicked?.Invoke(this); //left click - select item
         }
     }
 }
