@@ -83,7 +83,7 @@ namespace Inventory.Model
         private bool IsInventoryFull()
             => inventoryItems.Where(item => item.IsEmpty).Any() == false;
 
-        /*private int AddStackableItem(ItemSO item, int quantity)
+        private int AddStackableItem(ItemSO item, int quantity)
         {
             for (int i = 0; i < inventoryItems.Count; i++)
             {
@@ -91,7 +91,7 @@ namespace Inventory.Model
                     continue;
                 //if (inventoryItems[i].item.ID == item.ID)
             }
-        }*/
+        }
 
         public void AddItem(InventoryItemSO item)
         {

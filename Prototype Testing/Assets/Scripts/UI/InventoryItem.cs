@@ -52,24 +52,24 @@ namespace Inventory.UI
             borderImage.enabled = true; //indicates the highlighted slot
         }
 
-        /*public void OnBeginDrag()
+        public void OnBeginDrag()
         {
             if (empty)
                 return; //if the item is empty then you can not drag it
             OnItemBeginDrag?.Invoke(this); //checking to see that there is an item in the slot to be dragged
-        }*/
+        }
 
-        /*public void OnDrop()
+        public void OnDrop()
         {
             OnItemDroppedOn?.Invoke(this); //when you drop and item on an item it swaps it and rehighlights the slot //will never be empty
-        }*/
+        }
 
-        /*public void OnEndDrag()
+        public void OnEndDrag()
         {
             OnItemEndDrag?.Invoke(this);
-        }*/
+        }
 
-        /*public void OnPointerClick(BaseEventData data) //left and right click of mouse
+        public void OnPointerClick(BaseEventData data) //left and right click of mouse
         {
             if (empty)
                 return;
@@ -82,12 +82,12 @@ namespace Inventory.UI
             {
                 OnItemClicked?.Invoke(this); //left click - select item
             }
-        }*/
+        }
 
         public void OnPointerClick(PointerEventData pointerData)
         {
-            /*if (empty)
-                return;*/ //temp value
+            if (empty)
+                return; //temp value
                           //PointerEventData pointerData = (PointerEventData)data; //not needed
             if (pointerData.button == PointerEventData.InputButton.Right) //checking which click was used on the mouse
             {

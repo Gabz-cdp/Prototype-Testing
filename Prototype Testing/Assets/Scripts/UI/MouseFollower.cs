@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
+
 public class MouseFollower : MonoBehaviour
 {
     [SerializeField]
@@ -35,4 +35,4 @@ public class MouseFollower : MonoBehaviour
         gameObject.SetActive(val);
     }
 }
-*/
+

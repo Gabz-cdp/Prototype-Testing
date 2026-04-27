@@ -50,8 +50,8 @@ namespace Inventory
         {
             this.inventoryUI.InitializeInventoryUI(inventoryData.Size);
             this.inventoryUI.OnSwapItems += HandleSwapItems;
-            //this.inventoryUI.OnStartDragging += HandleDragging;
-            //this.inventoryUI.OnItemActionRequested += HandleItemActionRequest;
+            this.inventoryUI.OnStartDragging += HandleDragging;
+            this.inventoryUI.OnItemActionRequested += HandleItemActionRequest;
         }
 
         private void HandleSwapItems(int itemIndex_1, int itemIndex_2)
@@ -69,7 +69,7 @@ namespace Inventory
 
         private void HandleItemActionRequest(int itemIndex)
         {
-            //inventoryData.SwapItems(itemIndex_1, itemIndex_2);
+            inventoryData.SwapItems(itemIndex_1, itemIndex_2);
         }
 
         public void Update()
